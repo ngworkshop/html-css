@@ -1,0 +1,196 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Introduction to HTML and CSS</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="html-css-1"
+                  title="Introduction to HTML and CSS"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="HTML, DOM and the Browser" duration="20">
+        <h2 is-upgraded>Warm up</h2>
+<p>All of us already know what is a web page and which technology are involved.<br>At this point of our study-path, we know that a web page is created by using HTML, CSS and JavaScript.</p>
+<p>Let&#39;s start refreshing some ideas behind HTML and how our Browser works behind the scene.</p>
+<p>HTML defines the structure of a web page using several semantic elements that define the purpose of texts, images and others resources within page. This brings us the principle of SoC (Separation of Concerns) where every techonoly is used for a spefic purpose:</p>
+<ul>
+<li>HTML: Semantic Structure of the Content</li>
+<li>CSS: Presentation of the Content</li>
+<li>JavaScript: Behaviour of the Elements</li>
+</ul>
+<p>Thanks to SoC we can have advantages like: scalable website (or application), more readable and mantainable software, etc... .</p>
+<h2 is-upgraded>The Structure</h2>
+<p>HTML stand for HyperText Markup Language built as a language for the World Wide Web and use by the browser to interpret and show to us, text, images and link to other documents.</p>
+<p>An HTML page is a file with the &#34;.html&#34; extension. Inside we can write HTML tag elements to define the structure and the content of the page:</p>
+<pre><code>&lt;element-name attr=value&gt;content&lt;/element-name&gt;
+</code></pre>
+<p>A HTML tag element is identified by a couple of tags (opening tag and closing tag) in the source code with a string within angle brackets and some key-value pairs that define the element attributes. An <strong>attribute</strong> is an additional information of the HTML element, such as the CSS Class, the ID for identification or attributes for sizing and value. Some of those attributes are shared by all the elements, others are specified to only a few set of tag elements.<br><a href="https://html.com/attributes/" target="_blank">Here</a> you can find a complete list of HTML tag attributes.</p>
+<p>The web page is a parent-child relationship tree. With the html tag as the root element, divided by head and body section.<br>The head section contains only meta data and link to other resource like stylesheet (CSS) and script (JavaScript). This section is ignored by the rendering process, so no tag element inside head will be visible to our device.<br>The body section contains all the visible parts of our web page.</p>
+<p class="image-container"><img src="img/4e8dd10d1378a88.png"></p>
+<p class="image-container"><img src="img/465279af2dfcf482.gif"></p>
+<p>An element that is directly contained by another element is said to be the <strong>child</strong> of that element, and this is the <strong>parent</strong>. Elements that have the same parent are called <strong>siblings</strong>. All the elements within a given element are called <strong>descendats</strong>. A child is just a special kind of descendats, it&#39;s relative of the context. To be considered as a child, an elements needs to be directly under its parent element in the structure.<br>Understand the structure and the relationship between elements is crucial to understand how CSS works.</p>
+<p>Try to find the errors:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+	&lt;body&gt;
+		&lt;/header&gt;
+			&lt;h1&gt;My Portfolio Web Page&lt;/h1&gt;
+			&lt;p&gt;A simple show gallery of my projects&lt;/p&gt;
+		&lt;/header&gt;
+		&lt;section&gt;
+			&lt;a href=&#39;#&#39; alt=&#39;first-project&#39;&gt;&lt;h6&gt;More info...&lt;/h6&gt;&lt;/a&gt;
+			&lt;p&gt;In this project called &lt;b&gt;The One, I encountered different problems, like:
+			&lt;ul&gt;&lt;/p&gt;
+				&lt;li&gt;...&lt;/li&gt;
+				&lt;li&gt;...&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/ul&gt;
+		&lt;/section&gt;
+		&lt;div&gt;
+			&lt;aside&gt;
+				&lt;!-- To-Do: .... --&gt;
+			&lt;/aside&gt;
+			&lt;aside&gt;
+				&lt;!-- To-Do: .... --&gt;
+			&lt;/aside&gt;
+		&lt;div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>You need to know that HTML is not so observant to the rules, and some errors can be tolerated by the HTML, like to omit the closing p tag, or omit html tag. I always reccomend to keep consistency and clarity when you write your code.</p>
+<h2 is-upgraded>The Browser</h2>
+<p>The main goal of every browser is to present on a device the resource you have request to a server. Tipically you request a web page from a web server. A browser, thanks to its rendering engine, can be show a lot of different kind of resources like: PDF, Images, Video or... an HTML Page.<br>When your browser start to read and parse an HTML page, it construct an in-memory structure called <strong>DOM</strong>, it acts like a tree.<br>Every HTML elements will be inside this structure and it can be thought like an object called <strong>Node Element</strong>, and the attributes of the HTML element will be the initial value of this node, called them <strong>Property</strong>. Then we have another tree called Render Tree, that contains styling information together with visual rules. Every leaf of this tree is a rectangle with visual attributes. The browser start as soon as possible to display the contents on the user device in the &#34;layout-process&#34; step.</p>
+<h2 is-upgraded>How we write HTML Code</h2>
+<p>We can write HTML in every editor on our computer or with a lot of online tools to make some test/mock and experiment for our studies.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTML Tag Elements" duration="15">
+        <h2 is-upgraded>The source code in HTML</h2>
+<p>When we writing HTML source code, we define a set of HTML Elements by using TAG ELEMENT.</p>
+<p>The most common tag elements are:</p>
+<pre><code>&lt;html&gt;&lt;/html&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h2&gt;&lt;/h2&gt;
+...
+&lt;h6&gt;&lt;/h6&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;a&gt;&lt;/a&gt;
+&lt;img&gt;
+&lt;b&gt;&lt;/b&gt;
+&lt;i&gt;&lt;/i&gt;
+&lt;strong&gt;&lt;/strong&gt;
+&lt;em&gt;&lt;/em&gt;
+</code></pre>
+<p>Probably you are familiar to this rules:</p>
+<ul>
+<li>not every HTML tags needs to be closed, some tags are self closing;</li>
+<li>some HTML tags needs to be unique like html, title, head and body;</li>
+<li>some HTML tags can have the same visual effect like b and strong but have different results for SEO;</li>
+<li>some HTML tags are mandatory like: !DOCTYPE, html and title. Those are the minimun tags to have a valid HTML page;</li>
+<li>certain tags can be omitted like html, head and body <a href="https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission" target="_blank">LINK</a>;</li>
+<li>every HTML tags can be enanched with <strong>Attributes</strong>, like a unique identifier with <strong>id</strong> attribute;</li>
+<li>avoid break your text with br, instead use the p tag;</li>
+<li>we can add metadata to enhance search engine optimization, browser compatibilty and reach better performance in some devices;</li>
+<li>to organize better your page section, header, nav, article, footer with div, ul/ol and span are your best friend;</li>
+<li>not every mistakes are browser-breaking mistakes but they produce bad design and poor SEO performance.</li>
+</ul>
+<p>One of the main purpose of HTML is to diplay text, images and link to other documents. The way to do it, is by using two tag elements: img and a (anchor tag):</p>
+<pre><code>&lt;p&gt;&lt;span class=&#34;fa fa-heart&#34;&gt;&lt;/span&gt;Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium sodales urna, non mattis turpis tincidunt sit amet. Sed vel vulputate lacus. Donec sed ornare mauri...&lt;/p&gt;
+&lt;img src=&#39;assets/my_logo&#39; alt=&#39;brand-logo&#39; width=&#39;64px&#39; height=&#39;64px&#39;&gt;
+&lt;a href=&#39;about.html&#39; target=&#39;_self&#39;&gt;About Us&lt;/a&gt;
+</code></pre>
+<h2 is-upgraded>Span</h2>
+<p>The span element is a generic inline element used most of times to add icons to our text or for grouping and applying styles to inline elements.</p>
+<h2 is-upgraded>Paragraph</h2>
+<h2 is-upgraded>Heading</h2>
+<h2 is-upgraded>Div</h2>
+<h2 is-upgraded>Image</h2>
+<h2 is-upgraded>Anchor</h2>
+<h2 is-upgraded>List</h2>
+<h2 is-upgraded>Preformatted Text</h2>
+<h2 is-upgraded>Blockquote</h2>
+<h2 is-upgraded>Organize Content: Article, Section, Aside, Div, Header, Footer, Nav</h2>
+<h2 is-upgraded>Data: Form, Label, Input, Button, Select, Radio and checkbox</h2>
+<h2 is-upgraded>Tables</h2>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTML Validation" duration="10">
+        <h2 is-upgraded>Challenge</h2>
+<aside class="special"><p>Try to validate your HTML code by click <a href="https://validator.w3.org/nu/#textarea" target="_blank">HERE</a>:</p>
+</aside>
+<p>Can you find the most minimum HTML valid code?</p>
+<p>Let&#39;s define the basic structure:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Now try to validate it. What&#39;s wrong with this code? Try to fix it, then try to find the most minimum code to get a green checking message.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="(HTML) Attributes vs. (DOM) Properties" duration="10">
+        <p>It&#39;s important to understand that the relationship between attributes and properties are not one-to-one relationship. Some HTML attributes don&#39;t have corresponding properties, like &#34;colspan&#34; and some DOM properties don&#39;t have corresponding HTML attributes like &#34;textContent&#34;.</p>
+<aside class="special"><p>Attributes are defined by HTML. Properties are defined by the DOM (Document Object Model). Attributes initialize DOM properties and then they are done. Property values can change; attribute values can&#39;t. The HTML attribute and the DOM property are not the same thing, even when they have the same name.</p>
+</aside>
+<h2 is-upgraded>Challenge</h2>
+<aside class="special"><p>Try to create an input element with some attributes (use at least id) and use the console.dir with document.getElementById to display all node&#39;s properties. If you want, try to add a value attribute and use document.getElementById and getAttribute to take the current value and the initial value.:</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Box Model" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Inline Vs Block Elements" duration="10">
+        <p>Every HTML Element is displayed as Inline or as Block, so the first rule to remember is: &#34;never put a block element inside an inline element&#34;</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="CSS" duration="0">
+        
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-08-28T15:24:01+02:00",
+  "id": "html-css-1",
+  "duration": 65,
+  "title": "Introduction to HTML and CSS",
+  "summary": "CodeLabs teaching HTML - CSS - Lesson 1",
+  "source": "lesson.md",
+  "theme": "",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "html",
+    "css",
+    "web"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "html-css-1"
+}

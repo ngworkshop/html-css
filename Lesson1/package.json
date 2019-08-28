@@ -1,0 +1,16 @@
+{
+  "name": "html-css-lesson-one",
+  "version": "1.0.0",
+  "description": "A basic introduction to HTML and CSS for Code Your Future - Rome (IT)",
+  "main": "index.js",
+  "scripts": {
+    "build": "claat export lesson.md",
+    "serve": "claat serve -addr 127.0.0.1:8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://githuc.om/ngworkshop/HTML-CSS.git"
+  },
+  "author": "Lorenzo Franceschini <postaforum@gmail.com>",
+  "license": "MIT"
+}
