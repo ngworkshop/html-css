@@ -29,8 +29,9 @@
     
       <google-codelab-step label="HTML, DOM and the Browser" duration="20">
         <h2 is-upgraded>Warm up</h2>
-<p>All of us already know what is a web page and which technology are involved.<br>At this point of our study-path, we know that a web page is created by using HTML, CSS and JavaScript.</p>
-<p>Let&#39;s start refreshing some ideas behind HTML and how our Browser works behind the scene.</p>
+<p>All of us already know what is a web page and which technology are involved.<br>At this point of our study-path, we know that a web page is created by using HTML, CSS and JavaScript.<br>Internet is different from the Web, the first one is a network of computers, connected together by lan and wireless structures. No one owns the internet and the purpose of it, is to share data with a set of services and protocols such as files transfer (FTP), email (POP3/SMTP/IMAP), remote access (SSH), chat (IRC), calls (VoIP), Domain Name Service (DNS) or News (NNTP).<br>The web is a specific way to share information over the internet with the HTTP protocol. It allows documents to be linked to one another via hyper links and build a solid net of interconnected document all over the world.</p>
+<p>The job to build a good website is hard, you need to organizes the content logically, give some search functionality, maybe you need to organize the data on a backend, works with UX (User eXperience) and UI (User Interface) designers and be aderent to the brand identity, reach the marketing goals and be search engine friendly to be ranked well on it. Your website must be look fine for various different devices and be &#34;Responsive&#34; and &#34;Accessible&#34; for all. You need also be adernt to the web standards and works hard to get good Site Performance.</p>
+<p>Let&#39;s begin refreshing some ideas behind HTML and how our Browser works behind the scene.</p>
 <p>HTML defines the structure of a web page using several semantic elements that define the purpose of texts, images and others resources within page. This brings us the principle of SoC (Separation of Concerns) where every techonoly is used for a spefic purpose:</p>
 <ul>
 <li>HTML: Semantic Structure of the Content</li>
@@ -38,8 +39,9 @@
 <li>JavaScript: Behaviour of the Elements</li>
 </ul>
 <p>Thanks to SoC we can have advantages like: scalable website (or application), more readable and mantainable software, etc... .</p>
-<h2 is-upgraded>The Structure</h2>
 <p>HTML stand for HyperText Markup Language built as a language for the World Wide Web and use by the browser to interpret and show to us, text, images and link to other documents.</p>
+<p>HTML is not a programming language, but a markup language, this means it is a language for identifying and describing the various elements in a document such as navigation and footer, heading and paragraphs, image and hyperlink. Thanks to a set of markup, we can indicate the document&#39;s underlying structure.</p>
+<h2 is-upgraded>The Structure</h2>
 <p>An HTML page is a file with the &#34;.html&#34; extension. Inside we can write HTML tag elements to define the structure and the content of the page:</p>
 <pre><code>&lt;element-name attr=value&gt;content&lt;/element-name&gt;
 </code></pre>
@@ -80,7 +82,28 @@
 <h2 is-upgraded>The Browser</h2>
 <p>The main goal of every browser is to present on a device the resource you have request to a server. Tipically you request a web page from a web server. A browser, thanks to its rendering engine, can be show a lot of different kind of resources like: PDF, Images, Video or... an HTML Page.<br>When your browser start to read and parse an HTML page, it construct an in-memory structure called <strong>DOM</strong>, it acts like a tree.<br>Every HTML elements will be inside this structure and it can be thought like an object called <strong>Node Element</strong>, and the attributes of the HTML element will be the initial value of this node, called them <strong>Property</strong>. Then we have another tree called Render Tree, that contains styling information together with visual rules. Every leaf of this tree is a rectangle with visual attributes. The browser start as soon as possible to display the contents on the user device in the &#34;layout-process&#34; step.</p>
 <h2 is-upgraded>How we write HTML Code</h2>
-<p>We can write HTML in every editor on our computer or with a lot of online tools to make some test/mock and experiment for our studies.</p>
+<p>We can write HTML in every editor on our computer or with a lot of online tools to make some test/mock and experiment for our studies.<br>We start writing some content typically in a <code>index.html</code> file, without think about the layout but only focus on the content organization with the right use of the tag element of HTML.</p>
+<p>The very common basic structure is:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+	&lt;title&gt;Web Page Title&lt;/title&gt;
+	&lt;meta chartset=&#34;utf-8&#34;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- Put content here! --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>If you add a few of block of texts and use the very basic HTML tags such as <code>div</code>, <code>p</code> and <code>h1</code>, you can see that heading, div and paragraph start on new lines. This is because they are <strong>block level</strong> elements. Each block level element start in a new line and take the whole row of their container (the parent element). You can image it like a rectangle. Other tag element, like <code>span</code>, <code>a</code>, <code>img</code> or <code>strong</code> are <strong>inline</strong> elements. They don&#39;t start a new line.<br>Remember this rule: &#34;never put a block element inside an inline element&#34;.</p>
+<p>If you try to add dimension to an inline element, some properties will be applied, some properties will be partially applied and others will not be applied at all. The most noticable properties are width, height, margin and padding.<br>In a inline element, the width and height will be not applied to it. We can apply only right and left padding or margin.We can change the defalt display from inline to inline-block to get all the size properties.</p>
+<p>After a basic structure we define a style sheet, usually a file called <code>style.css</code> and we link it to our <code>index.html</code> in the head section:</p>
+<pre><code>&lt;head&gt;
+	&lt;title&gt;Web Page Title&lt;/title&gt;
+	&lt;meta chartset=&#34;utf-8&#34;&gt;
+	&lt;link rel=&#34;stylesheet&#34; href=&#34;style.css&#34;&gt;
+&lt;/head&gt;
+</code></pre>
 
 
       </google-codelab-step>
@@ -105,6 +128,7 @@
 &lt;i&gt;&lt;/i&gt;
 &lt;strong&gt;&lt;/strong&gt;
 &lt;em&gt;&lt;/em&gt;
+&lt;hr&gt;&lt;/hr&gt;
 </code></pre>
 <p>Probably you are familiar to this rules:</p>
 <ul>
@@ -115,6 +139,7 @@
 <li>certain tags can be omitted like html, head and body <a href="https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission" target="_blank">LINK</a>;</li>
 <li>every HTML tags can be enanched with <strong>Attributes</strong>, like a unique identifier with <strong>id</strong> attribute;</li>
 <li>avoid break your text with br, instead use the p tag;</li>
+<li>some HTML tags elements are empty such as ‘hr&#39;, ‘img&#39; or ‘br&#39;;</li>
 <li>we can add metadata to enhance search engine optimization, browser compatibilty and reach better performance in some devices;</li>
 <li>to organize better your page section, header, nav, article, footer with div, ul/ol and span are your best friend;</li>
 <li>not every mistakes are browser-breaking mistakes but they produce bad design and poor SEO performance.</li>
@@ -127,11 +152,23 @@
 <h2 is-upgraded>Span</h2>
 <p>The span element is a generic inline element used most of times to add icons to our text or for grouping and applying styles to inline elements.</p>
 <h2 is-upgraded>Paragraph</h2>
+<p>The paragraph element <code>p</code> is a container for a set of words. Ususally, browsers will render it between to empty line at the top and bottom of the paragraph.</p>
 <h2 is-upgraded>Heading</h2>
+<p>The heading element <code>h(1-6)</code> is a container to generates from the largest heading with <code>h1</code> to the smallest one with <code>h6</code>.<br>Usually we have an heading element before a paragraph element, inside a division element.</p>
 <h2 is-upgraded>Div</h2>
+<p>The division element <code>div</code> is a generic container, you can still contains a set of words such as <code>p</code>, but it&#39;s more semantic to use the paragraph and group more than one paragraph in one div element.</p>
 <h2 is-upgraded>Image</h2>
+<p>Image element is used to add... an image to our web page. With the <code>src</code> attribute we can specify the location of an image. It can be local or remote image. The <code>alt</code> attribute provides a text that dispalys if the browser can&#39;t load the image.</p>
 <h2 is-upgraded>Anchor</h2>
+<p>Anchor is one of the most important element on the web page, is the soul of the web because with it you can create hyperlink and all the net that connects our documents. We can refer also to other section of the same page, not only to other pages. The content of the anchor element becomes the hypertext link by using the attribe <code>href</code> by giving the address of the page (URL). We can use absolute URL such as <code>href=&#34;http://www.google.it&#34;</code> or relative URL such as <code>href=&#34;catalogs/index.html&#34;</code>. If we need to refer to a specifict point in a page, we need to use an id attribute to the element we want to refer and the hash tag in the href: <code>href=&#34;#about&#34;</code> where about is an id attribute: <code>&lt;section id=&#34;about&#34;&gt;...&lt;/section&gt;</code>.<br>There are others advanced use, such as mail link with <code>mailto:myemail@gmail.com</code> or link to a specific fragment of another page.</p>
 <h2 is-upgraded>List</h2>
+<p>We have three main types of lists:</p>
+<ul>
+<li>Unordered Lists. Collection of items that appear in no-order;</li>
+<li>Ordered Lists. List with a sequence number;</li>
+<li>Definition Lists. Lists that contains both terms and definitions.</li>
+</ul>
+<p>All the elements <code>ul</code>, <code>ol</code>, <code>li</code>, <code>dl</code>, <code>dt</code> and <code>dd</code> are block level elements, which means that they always start on a new line by default.</p>
 <h2 is-upgraded>Preformatted Text</h2>
 <h2 is-upgraded>Blockquote</h2>
 <h2 is-upgraded>Organize Content: Article, Section, Aside, Div, Header, Footer, Nav</h2>
@@ -174,14 +211,34 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Inline Vs Block Elements" duration="10">
-        <p>Every HTML Element is displayed as Inline or as Block, so the first rule to remember is: &#34;never put a block element inside an inline element&#34;</p>
-
-
-      </google-codelab-step>
-    
       <google-codelab-step label="CSS" duration="0">
-        
+        <p>HTML is used to specify the content, CSS (Cascading Style Sheet) is used to describe a web page&#39;s appearance on the user device. The role of CSS is to manage all the graphical aspects like: fonts family, fonts size, background colors or images, line spacing, etc..., all the page layout aspects will be controlled by CSS, and we can control this layout also for different devices and contexts other than a browser, such as screen reader or a printer device.</p>
+<p>So, the way we do it is by using a set of rules defined in a style sheet file (or more than one file), where we use a lot of different selectors to select one or more HTML elements on the web page. The main selectors are:</p>
+<ul>
+<li>Type Selectors (select all the <code>a</code>, <code>div</code>, etc...);</li>
+<li>Class Selectors (select all the element with one or more css className defined as tag attribute);</li>
+<li>Id Selectors (select a specific element with the id attribue);</li>
+<li>Universal Selector (select all the page elements).</li>
+</ul>
+<p>For example:</p>
+<pre><code>div {
+	width: 50%;
+	height: 50%;
+}
+
+.header {
+	background-color: green;
+}
+
+#main-title {
+	font-size: 48rem;
+}
+
+* {
+	line-spacing: 0.5px;
+}
+</code></pre>
+
 
       </google-codelab-step>
     
